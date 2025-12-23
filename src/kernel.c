@@ -81,7 +81,6 @@ void kmain(multiboot_info_t* mbd, uint32_t magic){
 
     INFO("Kernel Booted!\n");
 
-    ksleep(1000);
 
     /** 
      * Initialize a basic integrated shell
@@ -89,12 +88,12 @@ void kmain(multiboot_info_t* mbd, uint32_t magic){
 
     __bshell();
 
-    //TODO: I don't know why this is don't work! Please if you know help me
-    /*
+    ksleep(1000);
+   
     gd_init(mbd, magic);
 
     init_graphical_test();
-    */
+
 
     for(;;){
         schedule();

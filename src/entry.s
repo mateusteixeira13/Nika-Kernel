@@ -1,7 +1,8 @@
 /* Declare constants for the multiboot header. */
 .set ALIGN,    1<<0             /* align loaded modules on page boundaries */
 .set MEMINFO,  1<<1             /* provide memory map */
-.set FLAGS,    ALIGN | MEMINFO  /* this is the Multiboot 'flag' field */
+.set VIDEO,    1<<2             /* request linear framebuffer */
+.set FLAGS,    ALIGN | MEMINFO | VIDEO /* this is the Multiboot 'flag' field */
 .set MAGIC,    0x1BADB002       /* 'magic number' lets bootloader find the header */
 .set CHECKSUM, -(MAGIC + FLAGS) /* checksum of above, to prove we are multiboot */
 
@@ -18,6 +19,17 @@ forced to be within the first 8 KiB of the kernel file.
 .long FLAGS
 .long CHECKSUM
 
+.long 0        /* header_addr */
+.long 0        /* load_addr */
+.long 0        /* load_end_addr */
+.long 0        /* bss_end_addr */
+.long 0        /* entry_addr */
+
+/* VIDEO fields (required because bit 2 is set) */
+.long 0        /* mode_type: 0 = linear framebuffer */
+.long 1024     /* width: 1024 pixels (or 0 for GRUB default) */
+.long 768      /* height: 768 pixels (or 0 for GRUB default) */
+.long 32       /* depth: 32 bits per pixel (or 0 for GRUB default) */
 /*
 The multiboot standard does not define the value of the stack pointer register
 (esp) and it is up to the kernel to provide a stack. This allocates room for a

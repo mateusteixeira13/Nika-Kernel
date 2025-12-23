@@ -1,18 +1,14 @@
-// TODO: I don't know why this is don't work! Please if you know help me
-
-/*
 #include <multiboot.h>
 #include <stdint.h>
 #include <vga.h>
 #include <vbe.h>
 #include <pit.h>
 
-
-GD = Graphical Driver
+// GD = Graphical Driver
 
 int gd_ok = 0;
 
-My struct yay!
+// My struct yay!
 
 typedef struct gd_framebuffer{
     uintptr_t addr;
@@ -98,16 +94,17 @@ void clear(uint32_t color){
     draw_rect(0, 0, fb_info.width, fb_info.height, color);
 }
 
-Test the VBE
+// Test the VBE
 
 void init_graphical_test(){
     if(gd_ok == 0){
         WARN("GD is not initialized\n");
         return;
     }
-    clear(0x000000);
-    draw_rect(50, 50, 200, 100, 0xFF0000); 
-    draw_rect(100, 100, 100, 50, 0x00FF00);
-    draw_rect(150, 150, 50, 50, 0x0000FF); 
+    for(uint32_t y = 0; y < fb_info.height; y++){
+        for(uint32_t x = 0; x < fb_info.width; x++){
+            put_pixel(x, y, 0xFF0000);
+        }
+    }
+    
 }
-*/
