@@ -1,8 +1,8 @@
 # What is Nika?
 
-Nika is an open-source operating system kernel inspired by Linux and the OSDev community, following philosophies similar to Unix/Linux systems.
+Nika is an open-source operating system kernel inspired by Linux and the OSDev community, following design philosophies similar to Unix/Linux systems.
 
-It allows free modification and redistribution, being completely free and open for experimentation and learning.
+It is fully free software, allowing unrestricted modification and redistribution. Nika is designed as a platform for experimentation, low-level development, and learning about operating system internals, with a strong focus on clarity, control, and hands-on understanding of kernel development.
 
 ---
 
