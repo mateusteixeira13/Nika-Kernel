@@ -33,7 +33,7 @@ You need the following tools installed:
 #### Install dependencies (Debian/Ubuntu)
 
 ```bash
-sudo apt install binutils build-essential nasm mtools xorriso
+sudo apt install binutils build-essential nasm mtools xorriso grub-pc-bin
 ```
 # Build
 
