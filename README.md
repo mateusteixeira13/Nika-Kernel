@@ -26,12 +26,14 @@ You need the following tools installed:
 - GCC (C compiler)  
 - NASM (Netwide Assembler)  
 - GNU Assembler (GAS / as)  
-- Make  
+- Make
+- Mtools
+- Xorriso
 
 #### Install dependencies (Debian/Ubuntu)
 
 ```bash
-sudo apt install binutils build-essential nasm
+sudo apt install binutils build-essential nasm mtools xorriso
 ```
 # Build
 
