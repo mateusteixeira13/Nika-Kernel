@@ -5,7 +5,7 @@ typedef enum{
     KERNEL_FAULT
 } KernelStatus;
 
-const char kernel_version[] = "nikakrnl-generic:052c3";
+const char kernel_version[] = "nikakrnl-generic:0.6.0";
 
 extern void user_main();
 
